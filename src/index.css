@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.btn{
+  @apply hover:text-gray-600 transition duration-300;
+}
+
+.titles{
+  @apply text-gray-100 text-3xl text-center
+}
+
+.text-outline {
+  text-shadow: 
+    -2px -2px 0 #303090,
+     2px -2px 0 #303090,
+    -2px  2px 0 #303090,
+     2px  2px 0 #303090;
+}
