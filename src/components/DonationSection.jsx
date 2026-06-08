@@ -1,8 +1,8 @@
 import DonationCard from "./DonationCard"
 function DonationSection(){
     return(
-        <div>
-            <DonationCard amount = {10} desc="Silver"/>
+        <div className = "flex justify-center gap-6 flex-row ">
+            <DonationCard amount = {10} desc="Blankets"/>
             <DonationCard amount = {20} desc="Gold"/>
             <DonationCard amount = {30} desc="Platinum"/>
         </div>
