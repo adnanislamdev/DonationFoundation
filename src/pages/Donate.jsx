@@ -11,7 +11,7 @@ function Donate(){
     const [clientSecret, setClientSecret] = useState("")
     const options = { clientSecret }
     useEffect(() => {
-        fetch("http://localhost:3000/create-payment-intent", {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount: 10 }) // hardcode for now
