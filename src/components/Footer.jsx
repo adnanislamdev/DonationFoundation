@@ -1,52 +1,49 @@
-// function Footer(){
-//     return(
-//         <div className = "text-sm pl-10 text-gray-100 bg-[#070715]/80 flex-col justify-start bottom-0 w-full rounded-lg">
-//             <h1>Contact Information</h1>
-//             <p>
-//                 Maimuna Seikh<br/>
-//                 Email<br/>
-//                 Phone
-//             </p>
-//         </div>
-//     )
-// }
-// export default Footer
-// import React from 'react';
-import { FaInstagram, FaFacebook} from "react-icons/fa";
+import { Link } from 'react-router-dom'
+import { FaFacebook } from 'react-icons/fa'
+
 export default function Footer() {
   return (
-    <footer className="bg-[var(--footer-bg)] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Seikh Foundation</h3>
-            <p className="text-[var(--footer-text)]">
-              Giving back to the communites of Bangladesh
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-[var(--footer-text)]">
-              <li>(929) 438-1758</li>
-              <li>info@seikhfoundation.com</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-3">
-              <a href="https://www.instagram.com/your_instagram_username/" target="_blank" rel="noopener noreferrer" className="text-[var(--footer-text)] hover:text-white transition-colors">
-                <FaInstagram className="h-5 w-5" />
-              </a>
-              <a href="https://www.facebook.com/groups/3916143341984389/user/100007602376353/" target="_blank" rel="noopener noreferrer" className="text-[var(--footer-text)] hover:text-white transition-colors">
-                <FaFacebook className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
+    <footer className="bg-[var(--footer-bg)] text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid gap-10 md:grid-cols-3">
+        <div>
+          <h3 className="text-2xl mb-3">Seikh Foundation</h3>
+          <p className="text-[var(--footer-text)] leading-relaxed">
+            Giving back to communities in Bangladesh, together with the East Mathurapur Human Welfare Organization.
+          </p>
         </div>
-        <div className="border-t border-[var(--footer-border)] mt-8 pt-8 text-center text-[var(--footer-text)]">
-          <p>&copy; 2026 Seikh Foundation. All rights reserved.</p>
+        <div>
+          <h4 className="font-sans font-semibold mb-3">Contact</h4>
+          <ul className="space-y-2 text-[var(--footer-text)]">
+            <li>Maimuna Seikh</li>
+            <li>
+              <a href="tel:+19294381758" className="hover:text-white">(929) 438-1758</a>
+            </li>
+            <li>
+              <a href="mailto:info@seikhfoundation.com" className="hover:text-white">info@seikhfoundation.com</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-sans font-semibold mb-3">Visit</h4>
+          <div className="flex flex-col gap-2 text-[var(--footer-text)]">
+            <Link to="/about" className="hover:text-white w-fit">About</Link>
+            <Link to="/donate" className="hover:text-white w-fit">Donate</Link>
+            <Link to="/contact" className="hover:text-white w-fit">Contact</Link>
+            <a
+              href="https://www.facebook.com/groups/3916143341984389/user/100007602376353/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-white w-fit mt-2"
+            >
+              <FaFacebook className="h-5 w-5" />
+              Facebook
+            </a>
+          </div>
         </div>
       </div>
+      <div className="border-t border-[var(--footer-border)] text-center text-sm text-[var(--footer-text)] py-5">
+        <p>&copy; {new Date().getFullYear()} Seikh Foundation. All rights reserved.</p>
+      </div>
     </footer>
-  );
+  )
 }

@@ -1,9 +1,10 @@
-function VideoCard({vids}){
-    return(
-        <div className="p-4 rounded-2xl overflow-hidden w-[600px] bg-black/60 gap-8">
-            <video src= {vids} controls className="w-full" />
-        </div>
-    )
+function VideoCard({ vids, title }) {
+  return (
+    <figure className="rounded-2xl overflow-hidden bg-[#181847] shadow-lg">
+      <video src={vids} controls preload="metadata" className="w-full aspect-video bg-black" />
+      <figcaption className="px-4 py-3 text-sm text-[#d7d7f4]">{title}</figcaption>
+    </figure>
+  )
 }
-export default VideoCard
 
+export default VideoCard

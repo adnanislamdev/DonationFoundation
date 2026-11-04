@@ -1,23 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-.btn{
-  @apply hover:text-gray-600 transition duration-300;
-}
-
-.titles{
-  @apply text-gray-100 text-3xl text-center;
-}
-
-.text-outline {
-  text-shadow: 
-    -2px -2px 0 #303090,
-     2px -2px 0 #303090,
-    -2px  2px 0 #303090,
-     2px  2px 0 #303090;
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: "Fraunces", serif;
+  --color-brand: #303090;
+  --color-brand-deep: #181847;
+  --color-wash: #8f8fda;
 }
 
 :root {
   --footer-bg: #181847;
-  --footer-text: #9ca3af;
-  --footer-border: #374151;
+  --footer-text: #c7c9e2;
+  --footer-border: #3a3a78;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #181847;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
+
+.btn {
+  @apply hover:text-gray-200 transition duration-300;
 }
