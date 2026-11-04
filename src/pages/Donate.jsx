@@ -48,7 +48,7 @@ function Donate() {
     setLoading(true)
     setError('')
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/create-payment-intent`, {
+      const response = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: selected }),
