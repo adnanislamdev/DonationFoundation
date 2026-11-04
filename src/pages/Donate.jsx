@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import DonationSection from '../components/DonationSection'
@@ -22,6 +22,16 @@ function Donate() {
   const [lockedAmount, setLockedAmount] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const checkoutRef = useRef(null)
+
+  useEffect(() => {
+    if (!clientSecret) return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    checkoutRef.current?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }, [clientSecret])
 
   const selected = customActive ? Number(custom) : amount
   const valid = Number.isFinite(selected) && selected >= 1 && selected <= 10000
@@ -105,7 +115,7 @@ function Donate() {
           </button>
           {error && <p className="mt-3 text-sm text-red-800">{error}</p>}
         </div>
-        <div>
+        <div ref={checkoutRef} className="scroll-mt-24">
           {clientSecret ? (
             <Elements key={clientSecret} stripe={stripePromise} options={options}>
               <CheckoutForm amount={lockedAmount} />
