@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import LogoMark from './LogoMark'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -13,7 +14,12 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-[#303090] text-gray-100 shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-serif text-2xl tracking-tight" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="flex items-center gap-2.5 font-serif text-2xl tracking-tight"
+          onClick={() => setOpen(false)}
+        >
+          <LogoMark className="h-8 w-8 shrink-0" />
           Seikh Foundation
         </Link>
         <div className="hidden md:flex items-center gap-8 text-[15px]">
