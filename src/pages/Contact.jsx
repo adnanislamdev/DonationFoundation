@@ -37,10 +37,6 @@ function Contact() {
               <dd>Maimuna Seikh</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-[#b7b7e4]">Phone</dt>
-              <dd><a href="tel:+19294381758" className="hover:underline">(929) 438-1758</a></dd>
-            </div>
-            <div>
               <dt className="text-xs uppercase tracking-wider text-[#b7b7e4]">Email</dt>
               <dd><a href="mailto:info@seikhfoundation.com" className="hover:underline">info@seikhfoundation.com</a></dd>
             </div>

@@ -16,9 +16,6 @@ export default function Footer() {
           <ul className="space-y-2 text-[var(--footer-text)]">
             <li>Maimuna Seikh</li>
             <li>
-              <a href="tel:+19294381758" className="hover:text-white">(929) 438-1758</a>
-            </li>
-            <li>
               <a href="mailto:info@seikhfoundation.com" className="hover:text-white">info@seikhfoundation.com</a>
             </li>
           </ul>
